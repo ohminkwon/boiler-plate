@@ -51,7 +51,7 @@ userSchema.pre('save', function(next){
         next()
       })    
     })
-  }
+  } 
   else{
     next()
   }
@@ -60,7 +60,7 @@ userSchema.pre('save', function(next){
 userSchema.methods.comparePassword = function(plainPassword, cb){
   //plainPassword - 암호화된 비밀번호
   bcrypt.compare(plainPassword, this.password, function(err, isMatch){
-    if(err) return cb(err),
+    if(err) return cb(err)
       cb(null, isMatch)
   })
 }
@@ -70,7 +70,7 @@ userSchema.methods.generateToken = function(cb){
   var user = this
 
   //jsonwebtoken을 활용해 token 생성
-  var token = jwt.sign(user._id.toHexString(), 'secretToken')
+  var token = jwt.sign(user._id.toHexString(), 'secretToken') 
 
   user.token = token
   user.save(function(err, user){
@@ -81,24 +81,18 @@ userSchema.methods.generateToken = function(cb){
 
 userSchema.statics.findByToken = function(token, cb){
   
-  var user = this;
+  var user = this
 
   // token decode 처리
   jwt.verify(token, 'secretToken', function(err, decoded){
 
     // user 아이디를 이용해서 유저를 검색
     // client token과 DB token 일치하는지 확인
-
     user.findOne({ "_id": decoded, "token": token }, function(err, user){
-
       if(err) return cb(err)
-
       cb(null, user)
     })
-
   })
-
-
 }
 
 const User = mongoose.model('User', userSchema)

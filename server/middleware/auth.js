@@ -4,7 +4,6 @@ const { User } = require('../models/User')
 let auth = (req, res, next) => {
   
   // auth 과정 처리
-
   // client cookie에서 token 가져오기
   let token = req.cookies.x_auth
 

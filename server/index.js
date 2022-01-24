@@ -61,7 +61,7 @@ app.post('/api/users/login', (req, res) => {
 
       // password가 일치하면 토큰 생성하기
       user.generateToken((err, user) => {
-        if(err) return res.status(400).send(err);
+        if(err) return res.status(400).send(err)
 
         // token save -> 'cookies' vs local storage
         res.cookie("x_auth", user.token)
@@ -74,7 +74,7 @@ app.post('/api/users/login', (req, res) => {
 
 app.get('/api/users/auth', auth, (req, res) => {
 
-  // auth
+  // auth -> middleware를 통과했기때문에 Authentication = true
   res.status(200).json({
     _id: req.user._id,
     isAdmin: req.user.role === 0 ?  false : true,
@@ -85,6 +85,19 @@ app.get('/api/users/auth', auth, (req, res) => {
     role: req.user.role,
     image: req.user.image
   })
+})
+
+app.get('/api/users/logout', auth, (req, res) => {
+
+  User.findOneAndUpdate(
+    { _id: req.user._id},
+    { token: ""},
+    (err, user) =>{
+      if(err) return res.json({ success: false, err });
+      return res.status(200).send({
+        success: true
+      })
+    })
 })
 
 app.listen(port, ()=> console.log(`Example app listening on port ${port}!`))
