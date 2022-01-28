@@ -45,7 +45,7 @@ function RegisterPage() {
           navigate('/login')
         } 
         else{
-          alert("Failed to sign up")
+          alert("양식에 맞게 다시 확인해주세요!")
         }
       })
   }

@@ -11,9 +11,20 @@
 - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken): 인증 토큰 생성을 위한 라이브러리로, 계정 생성 및 로그인 기능을 위해 사용합니다.
 - [mongoose](https://github.com/Automattic/mongoose): NoSQL 데이터베이스인 mongoDB를 지원하는 확장 모듈로, 웹서버와 DB의 연결과 ODM을 위해 사용합니다.
 - [nodemon](https://github.com/remy/nodemon):Node.js 기반 어플리케이션 개발시 파일 변경 감지와 자동 재시작 라이브러리로, 개발 편의성을 위해 사용합니다.
+- [concurrently](https://github.com/open-cli-tools/concurrently):
+- [antd]():
+- [@ant-design/icons]():
+- [redux]():
+- [redux-promise]():
+- [redux-thunk]():
+
 
 ## 📚 Refs
 ### CRA Proxy
 https://create-react-app.dev/docs/proxying-api-requests-in-development/#configuring-the-proxy-manually
 ### React-Router-Dom v6 migration
 https://reactrouter.com/docs/en/v6/upgrading/v5
+### Ant Design
+https://ant.design/
+### Inflearn 강의: 따라하며 배우는 노드, 리액트 시리즈
+https://bit.ly/3o6tzC6

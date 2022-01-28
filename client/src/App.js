@@ -10,7 +10,6 @@ import LandingPage from './components/views/LandingPage/LandingPage'
 import LoginPage from './components/views/LoginPage/LoginPage'
 import RegisterPage from './components/views/RegisterPage/RegisterPage'
 import Auth from './hoc/auth'
-import { auth } from './_actions/user_action';
 
 function App() {
   return (
@@ -20,7 +19,7 @@ function App() {
         <Route path="/login" element = {Auth(LoginPage, false)} />
         <Route path="/register" element = {Auth(RegisterPage, false)} />   
       </Routes>
-    </BrowserRouter>    
+    </BrowserRouter> 
   );
 }
 

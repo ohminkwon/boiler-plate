@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { logoutUser } from '../../../_actions/user_action'
 
+import { Button } from 'antd';
 
 function LandingPage() {
 
@@ -21,21 +22,40 @@ function LandingPage() {
         if(response.payload.success){
           navigate('/login')
         }
-        else{
-          alert('로그아웃 실패')
+        else{          
+          alert('로그인 상태가 아닙니다. \n로그인 페이지로 이동해주세요.')
         }
       })
   }
 
-  return (
+  const onClickRegisterHandler = () => {
+    navigate('/register')        
+  }
+
+  const onClickloginHandler = () => {
+    navigate('/login')        
+  } 
+
+  return (  
     <div style={{
-      display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100vh'
+      display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100vh'
     }}>
       <h2>시작 페이지</h2>
 
-      <button onClick={onClickHandler}>
-        로그아웃
-      </button>
+      <div>
+        <Button style={{margin: '2px'}} type= "primary" onClick={onClickRegisterHandler}>
+          회원가입
+        </Button>
+        <Button style={{margin: '2px'}} type= "primary" onClick={onClickHandler}>
+          로그아웃
+        </Button>
+      </div>
+
+      <div>
+        <Button style={{margin: '2px'}} type= "primary" onClick={onClickloginHandler}>
+          *로그인 페이지로 이동*
+        </Button>
+      </div>
     </div>
   )
 }
