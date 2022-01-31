@@ -11,12 +11,14 @@
 - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken): 인증 토큰 생성을 위한 라이브러리로, 계정 생성 및 로그인 기능을 위해 사용합니다.
 - [mongoose](https://github.com/Automattic/mongoose): NoSQL 데이터베이스인 mongoDB를 지원하는 확장 모듈로, 웹서버와 DB의 연결과 ODM을 위해 사용합니다.
 - [nodemon](https://github.com/remy/nodemon):Node.js 기반 어플리케이션 개발시 파일 변경 감지와 자동 재시작 라이브러리로, 개발 편의성을 위해 사용합니다.
-- [concurrently](https://github.com/open-cli-tools/concurrently):
-- [antd]():
-- [@ant-design/icons]():
-- [redux]():
-- [redux-promise]():
-- [redux-thunk]():
+- [concurrently](https://github.com/open-cli-tools/concurrently): 여러 명령어를 동시에 사용하기 위한 모듈로, 클라이언트-서버를 동시에 실행시키기 위해 사용합니다.
+- [react-router-dom](https://github.com/remix-run/react-router): SPA 화면 전환을 위해 사용하는 모듈로, 웹 페이지 이동을 위해 사용합니다.
+- [redux](https://github.com/reduxjs/redux): 상태 관리를 위한 라이브러리로, 유저 상태 관리를 위해 액션과 리듀서를 조작할 때 사용합니다.
+- [redux-promise](https://github.com/redux-utilities/redux-promise): 프로미스 기반 비동기 작업을 위한 미들웨어로, 
+- [redux-thunk](https://github.com/reduxjs/redux-thunk): 리덕스에서 비동기 작업을 처리하기 위한 미들웨어로, 액션 객체가 아닌 함수를 디스패치하기 위해 사용합니다.
+- [antd](https://github.com/ant-design/ant-design): React UI 라이브러리로, 해당 프로젝트 디자인을 위해 사용합니다.
+- [@ant-design/icons](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react): React UI 라이브러리 [antd](https://github.com/ant-design/ant-design)의 아이콘 라이브러리로, 해당 프로젝트 디자인을 위해 사용합니다.
+
 
 
 ## 📚 Refs
